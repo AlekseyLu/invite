@@ -1,0 +1,16 @@
+.footer {
+  margin: 0 auto;
+  padding: 3rem;
+  max-width: max-content;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 100%;
+  font-weight: 400;
+  color: var(--dark);
+}
+
+@media (max-width: 568px) {
+  .footer {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "MyFont";
+  src: local("MyFont"), url("./fonts/BadScript.ttf") format("truetype");
+}
+
+#root {
+  overflow-x: hidden;
+}
+
+:root {
+  --colorGreen: #11845f;
+  --colorGrey: #84898c;
+  --dark: #363838;
+
+  --fs18: 18px;
+  --fs35: 35px;
+  --fs42: 42px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "MyFont", sans-serif;
+  font-size: 18px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+@media (max-width: 568px) {
+  .container {
+    padding: 0 1rem;
+  }
+}

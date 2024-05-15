@@ -1,0 +1,131 @@
+.bg {
+  margin: 0 auto;
+  padding: 2rem 0;
+  max-width: 1900px;
+  height: 780px;
+  background-image: url("../../app/images/hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center -150px;
+  background-size: cover;
+}
+
+.nav-list {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.nav-list li a {
+  color: #fff;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-list li:hover a {
+  color: #d4d4d4;
+}
+
+.hero {
+  margin-bottom: 40rem;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0 auto;
+  max-width: max-content;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.hero h3 {
+  margin: 0 auto;
+  max-width: max-content;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+.about {
+  margin: 0 auto;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  max-width: 50rem;
+  border-bottom: 1px dotted #6666665c;
+  text-align: center;
+}
+
+.about h2 {
+  margin: 0 auto;
+  max-width: max-content;
+  font-size: 3rem;
+  color: var(--colorGreen);
+}
+
+.about p {
+  margin: 0 auto;
+  max-width: max-content;
+  font-size: 2rem;
+  color: var(--colorGrey);
+}
+
+.about h2,
+.about p {
+  margin-bottom: 1.5rem;
+}
+
+.about-photo {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-photo img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  object-position: center center;
+  transform: scaleZ(1.5);
+  border-radius: 50%;
+  box-shadow: 0 0 5px 1px var(--colorGreen);
+}
+
+@media (max-width: 768px) {
+  .bg {
+    height: 635px;
+    background-position: center 0px;
+  }
+}
+
+@media (max-width: 568px) {
+  .bg {
+    background-position: -395px 0px;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  .hero h1 {
+    max-width: 135px;
+    line-height: 3rem;
+  }
+
+  .about {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .about h2 {
+    margin-bottom: 1rem;
+    max-width: 160px;
+    line-height: 4rem;
+  }
+
+  .about p {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
