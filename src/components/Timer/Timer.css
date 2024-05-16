@@ -19,7 +19,7 @@
   margin: 0 1rem;
   padding: 0.5rem;
   border-radius: 16px;
-  background-color: rgba(17, 132, 95, 0.1);
+  background-color: var(--bgTimer);
 }
 
 .box:first-child {
@@ -62,12 +62,6 @@
 }
 
 @media (max-width: 568px) {
-  .timer-container {
-    padding: 1rem;
-  }
-}
-
-@media (max-width: 320px) {
   .timer-container {
     padding: 0.7rem;
   }

@@ -8,9 +8,10 @@
 }
 
 :root {
-  --colorGreen: #11845f;
+  --colorGreen: #d3a8aa;
   --colorGrey: #84898c;
   --dark: #363838;
+  --bgTimer: #ead9dac8;
 
   --fs18: 18px;
   --fs35: 35px;
