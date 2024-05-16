@@ -1,0 +1,22 @@
+.nav-list {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.nav-list li a {
+  color: #fff;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-list li:hover a {
+  color: #d4d4d4;
+}
+
+@media (max-width: 568px) {
+  .nav-list {
+    display: none;
+  }
+}

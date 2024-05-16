@@ -2,32 +2,12 @@ import { FC, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useTimer } from "react-timer-hook";
 
+import { itemsList, listContainer } from "../../app/framer/config";
+
 import "./Timer.css";
 
 type Props = {
   expiryTimestamp: Date;
-};
-
-const list = {
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 1.3,
-    },
-  },
-  hidden: { opacity: 0 },
-};
-
-const nav = {
-  visible: (i: number) => ({
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: i * 0.5,
-      duration: 1,
-    },
-  }),
-  hidden: { opacity: 0, x: 300 },
 };
 
 export const Timer: FC<Props> = ({ expiryTimestamp }) => {
@@ -40,13 +20,12 @@ export const Timer: FC<Props> = ({ expiryTimestamp }) => {
   );
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const declensionNum = (num: any, words: string[]) => {
-    return words[
+  const declensionNum = (num: any, words: string[]) =>
+    words[
       num % 100 > 4 && num % 100 < 20
         ? 2
         : [2, 0, 1, 1, 1, 2][num % 10 < 5 ? num % 10 : 5]
     ];
-  };
 
   const day = days < 10 ? "0" + days : days;
   const hour = hours < 10 ? "0" + hours : hours;
@@ -58,17 +37,9 @@ export const Timer: FC<Props> = ({ expiryTimestamp }) => {
   const minTitle = declensionNum(min, ["минута", "минуты", "минут"]);
   const secTitle = declensionNum(sec, ["секунда", "секунды", "секунд"]);
 
-  const handleResize = (width: number) => {
-    console.log(width);
-    if (width < 568) {
-      setIsModile(false);
-      console.log(true);
-    } else {
-      setIsModile(true);
-      console.log(false);
-    }
-  };
-  console.log(window.screen.width);
+  const handleResize = (width: number) =>
+    width < 568 ? setIsModile(false) : setIsModile(true);
+
   useEffect(() => {
     window.addEventListener("resize", () => handleResize(window.screen.width));
     return () =>
@@ -81,33 +52,35 @@ export const Timer: FC<Props> = ({ expiryTimestamp }) => {
     <motion.ul
       initial="hidden"
       animate="visible"
-      variants={list}
+      variants={listContainer}
       className="timer-container"
     >
       <>
-        <motion.li custom={1} variants={nav} className="box">
+        <motion.li custom={1} variants={itemsList} className="box">
           <div className="number">{day}</div>
           <div className="text">{dayTitle}</div>
         </motion.li>
-        <motion.div className="line" custom={2} variants={nav} />
+        <motion.div className="line" custom={2} variants={itemsList} />
       </>
       <>
-        <motion.li custom={3} variants={nav} className="box">
+        <motion.li custom={3} variants={itemsList} className="box">
           <div className="number">{hour}</div>
           <div className="text">{hourTitle}</div>
         </motion.li>
-        <motion.div className="line" custom={4} variants={nav} />
+        <motion.div className="line" custom={4} variants={itemsList} />
       </>
       <>
-        <motion.li custom={5} variants={nav} className="box">
+        <motion.li custom={5} variants={itemsList} className="box">
           <div className="number">{min}</div>
           <div className="text">{minTitle}</div>
         </motion.li>
-        {isMobile && <motion.div className="line" custom={6} variants={nav} />}
+        {isMobile && (
+          <motion.div className="line" custom={6} variants={itemsList} />
+        )}
       </>
       {isMobile && (
         <>
-          <motion.li custom={7} variants={nav} className="box">
+          <motion.li custom={7} variants={itemsList} className="box">
             <div className="number">{sec}</div>
             <div className="text">{secTitle}</div>
           </motion.li>

@@ -1,0 +1,26 @@
+.hero {
+  margin-bottom: 40rem;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0 auto;
+  max-width: max-content;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.hero h3 {
+  margin: 0 auto;
+  max-width: max-content;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+@media (max-width: 568px) {
+  .hero h1 {
+    max-width: 135px;
+    line-height: 3rem;
+  }
+}

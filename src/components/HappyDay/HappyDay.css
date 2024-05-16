@@ -1,6 +1,6 @@
 .day {
   padding-bottom: 5rem;
-  border-bottom: 1px solid var(--colorGrey);
+  border-bottom: 1px dotted var(--colorGrey);
 }
 
 .day-list {
